@@ -1,36 +1,30 @@
-const myImage = document.querySelector("img");
+const myImage = document.querySelector(".surprise");
 
 myImage.onclick = () => {
   const mySrc = myImage.getAttribute("src");
-  if (mySrc === "images/Firefox-logo.png") {
-    myImage.setAttribute("src", "images/purple_butterfly.jpg");
+  if (mySrc === "images/purple_present.png") {
+    myImage.setAttribute("src", "images/cute_kitty.jpg");
   } else {
-    myImage.setAttribute("src", "images/Firefox-logo.png");
+    myImage.setAttribute("src", "images/purple_present.png");
   }
 }; 
 
 let myButton = document.querySelector("button");
-let myHeading = document.querySelector("h1");
-
-function setUserName() {
-    const myName = prompt("Please enter your name.");
-    if (!myName) {
-      setUserName();
-    } else {
-      localStorage.setItem("name", myName);
-      myHeading.textContent = `Mozilla is cool, ${myName}`;
-    }
-  }
-
-if (!localStorage.getItem("name")) {
-    setUserName();
-  } else {
-    const storedName = localStorage.getItem("name");
-    myHeading.textContent = `Mozilla is cool, ${storedName}`;
-  }
+let myBackground = document.querySelector("body");
 
 myButton.onclick = () => {
-    setUserName();
-  };
+  setBackgroundColor();
+};
+ 
+function changeColor(color) {
+document.body.style.background = color;
+}
+ 
+function setBackgroundColor() {
+changeColor('#5801c9');
+}
 
-  
+
+
+
+
